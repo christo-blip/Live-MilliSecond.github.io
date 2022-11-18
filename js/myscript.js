@@ -1,3 +1,21 @@
+//to copy the milli seconds
+function copyText(htmlElement){
+    if(!htmlElement)
+    {
+        return;
+    }
+    let elementText = htmlElement.innerText;
+    let inputElement = document.createElement('input');
+    inputElement.setAttribute('value',elementText);
+    document.body.appendChild(inputElement);
+    inputElement.select();
+    document.execCommand('copy');
+    inputElement.parentNode.removeChild(inputElement);
+}
+document.querySelector('#copy-text-btn').onclick=
+function (){
+    copyText(document.querySelector('#dynamicmillisec'));
+}
 //Static UTC Date
 const statmonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
 //add Zero function
